@@ -1,0 +1,201 @@
+---
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300"
+  style="background-color: var(--nav-bg); border-bottom: 1px solid var(--border-color);"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href={import.meta.env.BASE_URL} id="nav-logo" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-lau-400 to-lau-600 flex items-center justify-center shadow-lg group-hover:shadow-[var(--shadow-glow-green)] transition-shadow duration-300">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+          </svg>
+        </div>
+        <span class="text-lg font-bold tracking-tight" style="color: var(--text-primary);">
+          LAU <span class="text-lau-500">Wiki</span>
+          <span class="text-[10px] uppercase tracking-widest font-semibold ml-1.5 px-1.5 py-0.5 rounded border border-lau-500/30 text-lau-500 bg-lau-500/10">Unofficial</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#categories" class="nav-link">Tutorials</a>
+        <a href="#code-examples" class="nav-link">Code Examples</a>
+        <a href="#media" class="nav-link">Media</a>
+        <a href="https://github.com/DrowBlack/PlantWithCodingWiki" target="_blank" rel="noopener noreferrer" class="nav-link">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          id="theme-toggle"
+          class="relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-[var(--bg-secondary)] cursor-pointer"
+          aria-label="Toggle dark/light mode"
+        >
+          <svg
+            id="icon-sun"
+            class="w-5 h-5 absolute transition-all duration-300 text-accent-400"
+            style="opacity: 0; transform: rotate(-90deg) scale(0);"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg
+            id="icon-moon"
+            class="w-5 h-5 absolute transition-all duration-300"
+            style="color: var(--text-secondary);"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 hover:bg-[var(--bg-secondary)] cursor-pointer"
+          aria-label="Toggle mobile menu"
+        >
+          <svg class="w-5 h-5" style="color: var(--text-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="md:hidden overflow-hidden transition-all duration-300"
+      style="max-height: 0;"
+    >
+      <div class="py-3 space-y-1 border-t" style="border-color: var(--border-color);">
+        <a href="#categories" class="mobile-nav-link">Tutorials</a>
+        <a href="#code-examples" class="mobile-nav-link">Code Examples</a>
+        <a href="#media" class="mobile-nav-link">Media</a>
+        <a href="https://github.com/DrowBlack/PlantWithCodingWiki" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">GitHub</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="h-16"></div>
+
+<style>
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+  .nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+  }
+  .mobile-nav-link {
+    display: block;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+  .mobile-nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('icon-sun');
+    const moonIcon = document.getElementById('icon-moon');
+
+    function updateIcons(isDark) {
+      if (isDark) {
+        sunIcon.style.opacity = '1';
+        sunIcon.style.transform = 'rotate(0deg) scale(1)';
+        moonIcon.style.opacity = '0';
+        moonIcon.style.transform = 'rotate(90deg) scale(0)';
+      } else {
+        sunIcon.style.opacity = '0';
+        sunIcon.style.transform = 'rotate(-90deg) scale(0)';
+        moonIcon.style.opacity = '1';
+        moonIcon.style.transform = 'rotate(0deg) scale(1)';
+      }
+    }
+
+    updateIcons(document.documentElement.classList.contains('dark'));
+
+    toggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('lau-wiki-theme', isDark ? 'dark' : 'light');
+      updateIcons(isDark);
+    });
+  })();
+
+  (function () {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    let open = false;
+
+    btn.addEventListener('click', () => {
+      open = !open;
+      menu.style.maxHeight = open ? menu.scrollHeight + 'px' : '0';
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        open = false;
+        menu.style.maxHeight = '0';
+      });
+    });
+  })();
+
+  (function () {
+    const navbar = document.getElementById('navbar');
+    let lastY = 0;
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 50) {
+        navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
+</script>

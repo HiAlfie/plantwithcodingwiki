@@ -1,0 +1,71 @@
+---
+import LearnLayout from '../../layouts/LearnLayout.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+
+const prev = { title: 'General', link: `${import.meta.env.BASE_URL}learn/general` };
+const next = { title: 'Standard Library', link: `${import.meta.env.BASE_URL}learn/standard-library` };
+---
+
+<LearnLayout title="Programming - LAU Wiki" currentCategory="programming" prev={prev} next={next}>
+  <div class="mb-12">
+    <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-lau-400 to-lau-600">
+      Programming
+    </h1>
+    <p class="text-xl" style="color: var(--text-secondary);">
+      Learn the syntax and semantics of the LAU programming language.
+    </p>
+  </div>
+
+  <section id="syntax" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Syntax</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">LAU uses a clean, intuitive syntax heavily inspired by modern scripting languages.</p>
+  </section>
+
+  <section id="variables" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Variables</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Declare variables to store state.</p>
+    <CodeBlock title="variables.lau">
+      <div><span class="text-pink-400">var</span> <span class="text-blue-300">plantCount</span> = <span class="text-orange-300">10</span></div>
+    </CodeBlock>
+  </section>
+
+  <section id="operators" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Operators</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Standard arithmetic and logical operators are supported (+, -, *, /, &&, ||).</p>
+  </section>
+
+  <section id="structures" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Structures</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Control flow using if, else, and loops.</p>
+  </section>
+
+  <section id="functions" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Functions</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Encapsulate reusable code blocks.</p>
+  </section>
+
+  <section id="modules" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Modules</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Import and export logic across different LAU files.</p>
+  </section>
+
+  <section id="scopes" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Scopes</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Variables have block-level scoping.</p>
+  </section>
+
+  <section id="errors" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Errors</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Handle runtime exceptions gracefully.</p>
+  </section>
+
+  <section id="data-types" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Data Types</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Numbers, Strings, Booleans, and custom objects.</p>
+  </section>
+
+  <section id="lists" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Lists</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Arrays of items to manage multiple entities.</p>
+  </section>
+</LearnLayout>

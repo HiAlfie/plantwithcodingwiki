@@ -1,0 +1,70 @@
+---
+import LearnLayout from '../../layouts/LearnLayout.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+
+const prev = null;
+const next = { title: 'Programming', link: `${import.meta.env.BASE_URL}learn/programming` };
+---
+
+<LearnLayout title="General - LAU Wiki" currentCategory="general" prev={prev} next={next}>
+  <div class="mb-12">
+    <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-lau-400 to-lau-600">
+      General
+    </h1>
+    <p class="text-xl" style="color: var(--text-secondary);">
+      Welcome to LAU. This section covers the basics of the language, the editor, and the core environment.
+      You are not just a normal player controlling a caracter, but a programmer who automates the game.
+    </p>
+  </div>
+
+  <section id="getting-started" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Getting Started</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">LAU this code you write will bring life to your greatest assistant The Drone. You will control your drone for plant, crop, sell and other automations.</p>
+    <p class="mb-4" style="color: var(--text-secondary);">Every programmer's journey begins with writing code. but before writing something you need learn the system.</p>
+    <h2 class="text-2xl font-bold mb-4">Whats is Our Goal?</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">1. Buy Seeds: Purchase seeds you want to plant from the market.</p>
+    <p class="mb-4" style="color: var(--text-secondary);">2. Code: write code for your drone to plant seeds and water them (optional)</p>
+    <p class="mb-4" style="color: var(--text-secondary);">3. Plant, Harvest and Sale: earn money by harvesting and selling grown crops, and build better outomations.</p>
+  </section>
+
+  <section id="about-the-editor" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">About the Editor</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">The LAU Editor provides syntax highlighting, auto-completion, and error checking directly in the game UI. I dont have that much thing to say about it you will understand while using it.</p>
+  </section>
+
+  <section id="scripts" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Scripts</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">You can access Scripts page with clicking "Scripts" button in the game UI. there is few buttons as you see;</p>
+    <p class="mb-4" style="color: var(--text-secondary);">first one is "Create New Script": you can crete script files from this button. you can set script name and color you want. there has 2 different script options Script and ModuleScript. for now you will only use Script you will learn ModuleScript later.</p>
+    <p class="mb-4" style="color: var(--text-secondary);">Second one is View Output: you can see your scripts outputs here. its very important for see if your code working or getting error. you can place this to main screen with clicking button if you want. after that you will see output buttom on main screen you can right click to move it where you want.</p>
+    <p class="mb-4" style="color: var(--text-secondary);">Now you know how to create scripts but how you will use it? if you see there has a empty place in right of the screen, you can drag scripts there if you place your script here your script will added in your drone and you can run this selected script with clicking "Run" button in main menu.</p>
+    <p class="mb-4" style="color: var(--text-secondary);">Now you know how to create and use scripts but the inside of scripts is empty. so lets Start Writing Something!!!</p>
+    <CodeBlock title="hello.lau" code={`//this is your first script line!
+// write this script inside of your script and run it! you will see your drone says "Hello Garden!" and you can see same line in output screen.
+print("Hello Garden!")`} />
+    <p class="mb-4" style="color: var(--text-secondary);">there is Functions in LAU which are ready commands for do things like print something. we can call these functions with their name lemme give you few examples.</p>
+    <CodeBlock title="Functions.lau" code={`//our first function is
+drone.crop() // this functions crops the plant infront of your drone.
+drone.doFlip() // this function flips your drone! its just a visual :)
+
+// and you can run multiple statements sequentially, like this:
+drone.crop()
+drone.doFlip()
+drone.crop()`} />
+  </section>
+
+  <section id="farm" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Farm</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">The Farm is where your code physically executes its effects, translating LAU commands into real-world farming actions.</p>
+  </section>
+
+  <section id="script-extensions" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Script Extensions</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Extend your scripts using custom libraries and external modules tailored for advanced farming.</p>
+  </section>
+
+  <section id="output" class="mb-16 scroll-mt-24 reveal-on-scroll">
+    <h2 class="text-2xl font-bold mb-4">Output</h2>
+    <p class="mb-4" style="color: var(--text-secondary);">Use the output console to debug your scripts, track plant growth cycles, and view error messages.</p>
+  </section>
+</LearnLayout>

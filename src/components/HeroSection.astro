@@ -1,0 +1,120 @@
+---
+---
+
+<section
+  id="hero"
+  class="relative overflow-hidden py-24 sm:py-32 lg:py-40"
+  style="background: linear-gradient(135deg, var(--hero-gradient-start), var(--hero-gradient-end));"
+>
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-lau-400/10 blur-3xl animate-float"></div>
+    <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-lau-500/10 blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-lau-400/5 blur-3xl"></div>
+
+    <div
+      class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(var(--text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--text-primary) 1px, transparent 1px); background-size: 60px 60px;"
+    ></div>
+
+    <div class="particle" style="left: 10%; animation-duration: 15s; animation-delay: 0s;">🌿</div>
+    <div class="particle" style="left: 25%; animation-duration: 20s; animation-delay: 3s;">🍃</div>
+    <div class="particle" style="left: 50%; animation-duration: 18s; animation-delay: 6s;">🌱</div>
+    <div class="particle" style="left: 70%; animation-duration: 22s; animation-delay: 2s;">🌿</div>
+    <div class="particle" style="left: 85%; animation-duration: 16s; animation-delay: 5s;">🍃</div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-8 border" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);">
+      <span class="w-2 h-2 rounded-full bg-lau-400 animate-pulse"></span>
+      Open-Source Documentation
+    </div>
+
+    <h1 class="animate-fade-in-up delay-100 text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+      Learn to Code Your
+      <br />
+      <span class="relative inline-block">
+        <span class="bg-gradient-to-r from-lau-400 via-lau-500 to-lau-600 bg-clip-text text-transparent">
+          Digital Garden
+        </span>
+        <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-lau-400 to-lau-600 rounded-full opacity-60"></span>
+      </span>
+    </h1>
+
+    <p class="animate-fade-in-up delay-200 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style="color: var(--text-secondary);">
+      The complete unofficial wiki for <strong class="text-lau-500">LAU</strong> — a custom programming language designed for growing, managing, and automating your in-game gardens through elegant code.
+    </p>
+
+    <div class="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={`${import.meta.env.BASE_URL}learn`}
+        id="hero-cta-primary"
+        class="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-lau-500 to-lau-600 text-white font-semibold text-base shadow-lg shadow-lau-500/25 hover:shadow-lau-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+      >
+        Start Learning
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a
+        href="#code-examples"
+        id="hero-cta-secondary"
+        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-base border transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+        style="border-color: var(--border-color); color: var(--text-primary); background-color: var(--bg-card);"
+      >
+        <svg class="w-4 h-4 text-lau-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+        View Code Examples
+      </a>
+    </div>
+
+    <div class="animate-fade-in-up delay-500 mt-16 max-w-lg mx-auto">
+      <div class="rounded-xl overflow-hidden shadow-2xl" style="background-color: var(--bg-code);">
+        <div class="flex items-center gap-2 px-4 py-3" style="background-color: var(--code-header-bg);">
+          <div class="flex gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-red-400/80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400/80"></span>
+          </div>
+          <span class="text-xs font-mono text-gray-400 ml-2">garden.lau</span>
+        </div>
+        <div class="p-5 text-left font-mono text-sm leading-relaxed">
+          <div>
+            <span class="text-purple-400">plant</span>
+            <span class="text-gray-300">(</span>
+            <span class="text-accent-400">"rose"</span>
+            <span class="text-gray-300">)</span>
+          </div>
+          <div>
+            <span class="text-purple-400">water</span>
+            <span class="text-gray-300">(</span>
+            <span class="text-lau-300">amount:</span>
+            <span class="text-orange-300"> 3</span>
+            <span class="text-gray-300">)</span>
+          </div>
+          <div>
+            <span class="text-purple-400">grow</span>
+            <span class="text-gray-300">(</span>
+            <span class="text-lau-300">speed:</span>
+            <span class="text-accent-400"> "fast"</span>
+            <span class="text-gray-300">)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .particle {
+    position: absolute;
+    bottom: -20px;
+    font-size: 1.25rem;
+    opacity: 0;
+    animation: particle-float linear infinite;
+    pointer-events: none;
+    user-select: none;
+  }
+</style>

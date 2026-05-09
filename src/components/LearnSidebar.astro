@@ -1,0 +1,107 @@
+---
+const { currentCategory = 'general' } = Astro.props;
+
+const menu = [
+  {
+    title: 'General',
+    id: 'general',
+    link: `${import.meta.env.BASE_URL}learn/general`,
+    items: ['Getting Started', 'About the Editor', 'Scripts', 'Farm', 'Script Extensions', 'Output']
+  },
+  {
+    title: 'Programming',
+    id: 'programming',
+    link: `${import.meta.env.BASE_URL}learn/programming`,
+    items: ['Syntax', 'Variables', 'Operators', 'Structures', 'Functions', 'Modules', 'Scopes', 'Errors', 'Data Types', 'Lists']
+  },
+  {
+    title: 'Standard Library',
+    id: 'standard-library',
+    link: `${import.meta.env.BASE_URL}learn/standard-library`,
+    items: ['Globals', 'Enums', 'Drone', 'Math', 'Player', 'Market', 'Game', 'Task', 'String', 'List', 'Data']
+  },
+  {
+    title: 'Game',
+    id: 'game',
+    link: `${import.meta.env.BASE_URL}learn/game`,
+    items: ['Plants & Seeds', 'Base Info', 'Marketplace', 'Weather', 'Credits']
+  }
+];
+---
+
+<aside class="w-full lg:w-64 shrink-0 border-r pr-6 lg:h-[calc(100vh-6rem)] lg:sticky lg:top-24 overflow-y-auto hidden-scrollbar" style="border-color: var(--border-color);">
+  <nav class="flex flex-col gap-4 pb-10">
+    {menu.map((section) => {
+      const isActive = currentCategory === section.id;
+      return (
+        <div class="sidebar-section">
+          <button 
+            class="sidebar-toggle w-full flex items-center justify-between text-sm font-bold tracking-wider mb-1 uppercase hover:text-lau-500 transition-colors py-2"
+            style={`color: ${isActive ? 'var(--color-lau-500)' : 'var(--text-muted)'};`}
+          >
+            <span>{section.title}</span>
+            <svg class={`w-4 h-4 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          
+          <div class={`sidebar-content overflow-hidden transition-all duration-300 ${isActive ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+            <ul class="flex flex-col gap-1.5 border-l-2 ml-2 pl-3 py-1" style="border-color: var(--border-color);">
+              {section.items.map((item) => {
+                const hash = item.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                const href = isActive ? `#${hash}` : `${section.link}#${hash}`;
+                return (
+                  <li>
+                    <a href={href} class="toc-link block text-sm py-1 transition-colors" style="color: var(--text-secondary);">
+                      {item}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      );
+    })}
+  </nav>
+</aside>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.sidebar-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('svg');
+        const isOpen = content.classList.contains('max-h-[800px]');
+        
+        if (isOpen) {
+          content.classList.remove('max-h-[800px]', 'opacity-100');
+          content.classList.add('max-h-0', 'opacity-0');
+          icon.classList.remove('rotate-180');
+        } else {
+          content.classList.remove('max-h-0', 'opacity-0');
+          content.classList.add('max-h-[800px]', 'opacity-100');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .toc-link:hover, .toc-link.active {
+    color: var(--color-lau-500) !important;
+    font-weight: 500;
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .hidden-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .hidden-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+</style>

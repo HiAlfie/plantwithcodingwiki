@@ -1,0 +1,30 @@
+---
+import LearnLayout from '../../layouts/LearnLayout.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+
+const prev = { title: 'Programming', link: `${import.meta.env.BASE_URL}learn/programming` };
+const next = { title: 'Game', link: `${import.meta.env.BASE_URL}learn/game` };
+---
+
+<LearnLayout title="Standard Library - LAU Wiki" currentCategory="standard-library" prev={prev} next={next}>
+  <div class="mb-12">
+    <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-lau-400 to-lau-600">
+      Standard Library
+    </h1>
+    <p class="text-xl" style="color: var(--text-secondary);">
+      Built-in functions and APIs available globally in LAU.
+    </p>
+  </div>
+
+  <section id="globals" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Globals</h2><p style="color: var(--text-secondary);">Global variables and functions accessible from anywhere.</p></section>
+  <section id="enums" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Enums</h2><p style="color: var(--text-secondary);">Predefined enumerations for plant types and states.</p></section>
+  <section id="drone" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Drone</h2><p style="color: var(--text-secondary);">Control automated drones to harvest and plant.</p></section>
+  <section id="math" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Math</h2><p style="color: var(--text-secondary);">Mathematical utilities.</p></section>
+  <section id="player" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Player</h2><p style="color: var(--text-secondary);">Interact with the player entity.</p></section>
+  <section id="market" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Market</h2><p style="color: var(--text-secondary);">Check market prices and sell produce.</p></section>
+  <section id="game" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Game</h2><p style="color: var(--text-secondary);">Core game loop and state management.</p></section>
+  <section id="task" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Task</h2><p style="color: var(--text-secondary);">Asynchronous task scheduling.</p></section>
+  <section id="string" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">String</h2><p style="color: var(--text-secondary);">String manipulation.</p></section>
+  <section id="list" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">List</h2><p style="color: var(--text-secondary);">List manipulation utilities.</p></section>
+  <section id="data" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Data</h2><p style="color: var(--text-secondary);">Data storage and retrieval.</p></section>
+</LearnLayout>

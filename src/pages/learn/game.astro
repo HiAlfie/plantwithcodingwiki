@@ -1,0 +1,24 @@
+---
+import LearnLayout from '../../layouts/LearnLayout.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+
+const prev = { title: 'Standard Library', link: `${import.meta.env.BASE_URL}learn/standard-library` };
+const next = null;
+---
+
+<LearnLayout title="Game - LAU Wiki" currentCategory="game" prev={prev} next={next}>
+  <div class="mb-12">
+    <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-lau-400 to-lau-600">
+      Game
+    </h1>
+    <p class="text-xl" style="color: var(--text-secondary);">
+      In-game mechanics, systems, and entities you interact with via code.
+    </p>
+  </div>
+
+  <section id="plants-seeds" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Plants & Seeds</h2><p style="color: var(--text-secondary);">Details on all growable flora.</p></section>
+  <section id="base-info" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Base Info</h2><p style="color: var(--text-secondary);">Information about your main base and upgrades.</p></section>
+  <section id="marketplace" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Marketplace</h2><p style="color: var(--text-secondary);">The economy system for trading.</p></section>
+  <section id="weather" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Weather</h2><p style="color: var(--text-secondary);">How weather affects plant growth.</p></section>
+  <section id="credits" class="mb-16 scroll-mt-24 reveal-on-scroll"><h2 class="text-2xl font-bold mb-4">Credits</h2><p style="color: var(--text-secondary);">Game credits and contributors.</p></section>
+</LearnLayout>

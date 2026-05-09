@@ -1,0 +1,57 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LearnSidebar from '../components/LearnSidebar.astro';
+
+const { title, currentCategory, prev, next } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col lg:flex-row gap-8 lg:gap-12">
+    
+    <LearnSidebar currentCategory={currentCategory} />
+
+    <article class="flex-1 max-w-4xl min-w-0" style="color: var(--text-primary);">
+      <slot />
+
+      <hr class="my-12 border-t" style="border-color: var(--border-color);" />
+
+      <div class="flex flex-col sm:flex-row justify-between gap-4 mt-12 mb-20">
+        {prev ? (
+          <a href={prev.link} class="flex flex-col gap-1 p-5 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group" style="border-color: var(--border-color); background-color: var(--bg-card);">
+            <span class="text-xs uppercase tracking-wider transition-colors" style="color: var(--text-muted);">Previous Category</span>
+            <span class="text-lg font-bold text-lau-500 group-hover:text-lau-400 transition-colors">« {prev.title}</span>
+          </a>
+        ) : <div></div>}
+
+        {next ? (
+          <a href={next.link} class="flex flex-col gap-1 p-5 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-right group" style="border-color: var(--border-color); background-color: var(--bg-card);">
+            <span class="text-xs uppercase tracking-wider transition-colors" style="color: var(--text-muted);">Next Category</span>
+            <span class="text-lg font-bold text-lau-500 group-hover:text-lau-400 transition-colors">{next.title} »</span>
+          </a>
+        ) : <div></div>}
+      </div>
+    </article>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll('.toc-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').endsWith(`#${id}`)) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-10% 0px -80% 0px' });
+
+      document.querySelectorAll('section[id]').forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</BaseLayout>
